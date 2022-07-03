@@ -42,3 +42,11 @@ to stop runnig docker file:
 docker stop <Container ID>
 '''
 > Note: Container Id Can be found after running docker ps command
+
+Docker Command:
+'''
+CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app
+'''
+>Note: 1. $PORT is we are allowing heroku to assign a port for our app to run.
+       2. app:app = module-file-of-flask:object-name-of-flask
+
