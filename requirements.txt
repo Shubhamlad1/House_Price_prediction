@@ -3,4 +3,7 @@ Flask
 gunicorn
 sklearn
 pandas
+evidently
+dill
+urllib
 -e .

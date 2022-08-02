@@ -1,52 +1,44 @@
-# Machine-Learning-Project-1
-This is first ML Project
+Introduction: 
 
-Creating conda environment
-'''
-conda create -p project_1_env python==3.9 -y
-'''
+House Price prediction is an important topic which helps in understanding the current prices of the properties according to the locations, room, carpet area available ect. Considering predictions, it helps in better decision-making. Today we have large amount of data available from the various sources and we can make better utilization of data by using different Machine Learning Algorithms.
 
-After Creating Environment activate the created Environment
-'''
-activate project_1_env/ 
-'''
+In this project we have established complete machine learning pipeline. VS Code IDE is being used for project development, Git Bash and Git tool is used for version control, Docker Images are used for establishing CICD pipeline and the complete project is deployed on Heroku platform.
 
-To create the CI/CD pipeline following information is required:
-Heroku_Email: shubhamlad33@gmail.com
-Heroku_API_Key: <>
-Heroku_APP_Name: machine-learning-project-01
+Pandas, NumPy, Scikit-learn, Flask, dill, evidently are some of the important libraries being used to develop machine learning pipeline. This this project we have used dynamic approach to perform EDA, Feature Engineering, and Model Building. As data Is changing frequently, keeping our model up to date is important. In this case dynamic approach in the programming language helps us to trigger the pipeline and get the results accordingly. Also Logging and exception handling is being used in the project where it is required.  
 
-Build Docker Image
-'''
-docker build -t <Image-name>:<tagname>
-'''
-> Note: Image Name should always be in small letter
+Important Files:
 
-To list the docker image:
-'''
-docker images
-'''
+Config.yaml :
 
-Run Docker images:
-'''
-docker run -p 5000:5000 -e PORT=5000 c7382c34a154
-'''
+This file contains details required to establish project configuration. To create the folders to save input files and artifact file we are using the values in the canfig.yaml file.
 
-To check running containers in the docker
-'''
-docker ps
-'''
+Schema.yaml:
 
-to stop runnig docker file:
-'''
-docker stop <Container ID>
-'''
-> Note: Container Id Can be found after running docker ps command
+This file contain information related to the data such as data types of the columns, numerical columns, categorical columns and target columns.
 
-Docker Command:
-'''
-CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app
-'''
->Note: 1. $PORT is we are allowing heroku to assign a port for our app to run.
-       2. app:app = module-file-of-flask:object-name-of-flask
+Model.yaml:
+
+This file contains the information related to Algorithms used for model building.
+
+Steps Followed:
+
+Data Ingestion:
+
+•	Data is downloaded from the URL.
+•	split into train test files and saved.
+
+Data Validation:
+
+•	Checking the data types of columns are altering it if required.
+•	Checking Data Drifts between new and old data. (Evidently library is used)
+
+Data Transformation:
+
+•	Checking and handling null values.
+•	Data standardization using StandardScaler and OneHotEncoder libraries from Scikit-learn.
+
+Model Training and Evaluation:
+•	LinearRegression and RandomForestRegression is used with GridSeachCV.
+•	Model which is giving the best and generalized accuracy are selected and being used for predicting the values. 
+
 

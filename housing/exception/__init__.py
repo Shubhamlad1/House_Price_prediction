@@ -14,7 +14,7 @@ class HousingException(Exception):
     @staticmethod
     def get_detailed_error_message(error_message:Exception, error_details:sys)->str:
         __,__ , exec_tb = error_details.exc_info()
-        line_number= exec_tb.tb_frame.f_lineno
+        line_number= exec_tb.tb_lineno
         file_name= exec_tb.tb_frame.f_code.co_filename
 
         error_message = f"Error occured in script: [{file_name}] at line [{line_number}] error_message: [{error_message}]"
