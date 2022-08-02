@@ -24,7 +24,7 @@ Steps Followed:
 
 Data Ingestion:
 
-•	Data is downloaded from the URL.
+•	Data is downloaded from the URL.\n
 •	split into train test files and saved.
 
 Data Validation:
