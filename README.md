@@ -42,3 +42,5 @@ Model Training and Evaluation:
 •	Model which is giving the best and generalized accuracy are selected and being used for predicting the values. 
 
 
+<img width="913" alt="Project Structure" src="https://user-images.githubusercontent.com/96531123/191944094-270cf36b-3980-4582-980c-c4253650f412.png">
+
